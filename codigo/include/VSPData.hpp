@@ -270,6 +270,7 @@ public:
  
     // ============================================================
     // Carga completa desde CSVs separados
+    // Este formato es para compatibilidad con las instancias anteriores
     // ============================================================
     void leerInstancia(string archivo_terminales, string archivo_viajes) {
         leerTerminales(archivo_terminales);
@@ -279,7 +280,8 @@ public:
  
     // ============================================================
     // Carga desde formato de instancia .txt
-    // ============================================================
+    // Este es el formato que estamos usando ahora
+    //============================================================
     void leerInstanciaTxt(const string& archivo) {
         ifstream file(archivo);
         if (!file.is_open())

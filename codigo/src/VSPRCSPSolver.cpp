@@ -344,6 +344,7 @@ void VSPRCSPSolver::buildArcs(BcNetwork& network,
                 if (it_j == nodeIdMap.end()) continue;
                 int dur_i = data.viajes[i].fin - data.viajes[i].inicio;
                 int dur_j = data.viajes[j].fin - data.viajes[j].inicio;
+                // LMT: Revisar el uso del tercer parámetro del createArc, que es el costo original del arco. En este caso, se está usando 0.0, pero podría ser diferente si se quiere penalizar de alguna manera.
                 BcArc arc = network.createArc(it_i->second, it_j->second, 0.0);
                 tiempo_turno.setArcConsumption(arc, tm + dur_j);
                 tiempo_muerto.setArcConsumption(arc, tm + dur_i);
